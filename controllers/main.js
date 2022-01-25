@@ -28,9 +28,7 @@ let hienThi = (mang) => {
                 <td>${sp.desc}</td>
                 <td>${sp.type}</td>
                 <td>
-                    <button class="btn btn-danger" onclick="xoaSanPham('${sp.name}')">Xóa</button>
-                    <button class="btn btn-info" data-toggle="modal"
-                    data-target="#myModal" onclick="xemChiTiet('${sp.name}')">Xem</button>
+                    <button class="btn btn-info">Chọn</button>
                 </td>
             </tr>
 `;
@@ -39,24 +37,26 @@ let hienThi = (mang) => {
     document.getElementById("tblDanhSachSP").innerHTML = content;
 }
 layDanhSach();
-let onchangeType= ()=>{
+let onchangeType = () => {
     let x = document.getElementById("selectType").value;
     console.log(x);
-    let array=[];
-    let array2=[];
+    let array = [];
+    let array2 = [];
     pdSER.layDS()
-    .then((result) => {
-        console.log(result.data);
-        array = result.data;
-        array.map((sp,index)=>{
-            if(sp.type==x)
-            array2.push(array[index]);
+        .then((result) => {
+            console.log(result.data);
+            array = result.data;
+            array.map((sp, index) => {
+                if (sp.type == x) { array2.push(array[index]); }
+            }
+            );
+            if (array2.length == 0)
+                array2 = array;
+            console.log(array2);
+            hienThi(array2);
+        })
+
+        .catch((error) => {
+            console.log(error);
         });
-        console.log(array2);
-        hienThi(array2);
-        
-    })
-    .catch((error) => {
-        console.log(error);
-    });
 }
