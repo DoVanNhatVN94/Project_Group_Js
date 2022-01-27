@@ -1,0 +1,45 @@
+.footer-newsletter{
+    // width: 100vw;
+    position: relative;
+    // margin-left: cacl(-50vw + 50% - 8px);
+    padding: 0.55em 0;
+}
+.footer-bottom-widgets{
+    background-color: #f8f8f8;
+    padding: 4.28em 0 4.44em;
+    .footer-logo{
+        margin-bottom: 1.55em;
+    }
+    .footer-call-us{
+        margin-bottom: 3em;
+        .call-us-icon{
+            padding-right: 20px;
+            font-size: 4.63em;
+            color: $bs-ec-primary;
+        }
+        .call-us-text{
+            font-weight: 100;
+            font-size: .929em;
+            display: block;
+            line-height: 1.429em;
+        }
+        .call-us-number{
+            font-size: 1.571em;
+            display: block;
+            line-height: 1.429em;
+        }
+    }
+    .footer-bottom-widgets-menu-inner{
+        justify-content: space-between;
+        margin-top: -3em;
+    }
+    
+}
+.copyright-bar{
+    .float-start{
+        float: left;
+    }
+    .float-end{
+        float: right;
+    }
+}
