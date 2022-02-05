@@ -1,4 +1,5 @@
 let pdSER = new ProductService();
+let cart = [];
 
 let layDanhSach = () => {
     pdSER.layDS()
@@ -59,4 +60,7 @@ let onchangeType = () => {
         .catch((error) => {
             console.log(error);
         });
+}
+let addToCart = ()=>{
+    
 }
