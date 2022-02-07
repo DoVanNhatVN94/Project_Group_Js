@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACb",
+    "sources": [
+        "../sass/main.scss",
+        "../sass/Helpers/_variables.scss",
+        "../sass/Helpers/_mixin.scss",
+        "../sass/Base/_reset.scss",
+        "../sass/Components/_buttons.scss",
+        "../sass/Components/_card.scss",
+        "../sass/Layouts/_header.scss",
+        "../sass/Layouts/_carousel.scss",
+        "../sass/Layouts/_products.scss",
+        "../sass/Layouts/_footer.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
