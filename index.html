@@ -22,19 +22,35 @@
     </form>
     <table class="table table-bordered">
         <thead>
-          <th>STT</th>
-          <th>Tên Sản Phẩm</th>
-          <th>Giá</th>
-          <th>Màn Hình</th>
-          <th>Camera Trước</th>                
-          <th>Camera Sau</th>
-          <th>Hình Ảnh</th>
-          <th>Dung Lượng</th>
-          <th>Hãng</th>
+            <th>STT</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Giá</th>
+            <th>Màn Hình</th>
+            <th>Camera Trước</th>
+            <th>Camera Sau</th>
+            <th>Hình Ảnh</th>
+            <th>Dung Lượng</th>
+            <th>Hãng</th>
         </thead>
         <img src="./assets/img/" alt="">
         <tbody id="tblDanhSachSP"></tbody>
-      </table>
+    </table>
+    <button>cart</button>
+    <table class="table table-bordered">
+        <thead>
+            <th>STT</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Giá</th>
+            <th>Màn Hình</th>
+            <th>Camera Trước</th>
+            <th>Camera Sau</th>
+            <th>Hình Ảnh</th>
+            <th>Dung Lượng</th>
+            <th>Hãng</th>
+        </thead>
+        <img src="./assets/img/" alt="">
+        <tbody id="tblDanhSachSP2"></tbody>
+    </table>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -43,7 +59,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./services/ProductService.js"></script>
-<script src="./models/Product.js"></script>
+    <script src="./models/Product.js"></script>
+    <script src="./models/CartItem.js"></script>
     <script src="./controllers/main.js"></script>
 </body>
 

@@ -18,10 +18,10 @@ class ProductService {
             data: sp
         });
     }
-    xoaSP = (name) => {
+    xoaSP = (id) => {
         return axios({
             method: 'delete',
-            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${name}`,
+            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
 
         });
     }
