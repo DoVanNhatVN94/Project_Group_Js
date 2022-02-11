@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin CyberPhone Nhóm</title>
+    <!-- BS4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper row">
+        <!-- menu -->
+        <nav class="navbar navbar-expand-lg col-12">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="btn-search-header">
+                </div>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            <img src="https://salt.tikicdn.com/ts/upload/67/de/1e/90e54b0a7a59948dd910ba50954c702e.png" alt="">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Log out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div class="content ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tableSP">
+                        <h3>Product List</h3>
+                        <div class="row">
+                            <div class="col-6 col-sm-8">
+                                <button id="btnAdd" type="button" class="btn mb-3 " data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <i class="fa fa-plus-circle"></i>
+                                    Add Product
+                                </button>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <div class="form-group row">
+                                  <div class="col-sm-10">
+                                    <select class="custom-select" id="selLoai">
+                                      <option value="">Choose Type</option>
+                                      <option value="iphone">Iphone</option>
+                                      <option value="Samsung">SamSung</option>             
+                                    </select>
+                                  </div>
+                                </div>
+                               
+                              </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Img</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Screen</th>
+                                    <th scope="col">BackCamera</th>
+                                    <th scope="col">FrontCamera</th>
+                                    <th scope="col">Desc</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableProduct">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" id="phoneForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <label for="phoneID">ID</label>
+                                    <input type="text" class="form-control" id="phoneID" placeholder="Input ID" value=""
+                                        required>
+                                    <div id="invalidID" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="phoneName"> Phone Name</label>
+                                    <input type="text" class="form-control" id="phoneName"
+                                        placeholder="Input phone name" required>
+                                    <div id="invalidName" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="typePhone">Type Phone</label>
+                                    <select class="custom-select d-block w-100" id="typePhone" required>
+                                        <option value="">Choose type</option>
+                                        <option value="iphone">Iphone</option>
+                                        <option value="Samsung">SamSung</option>
+                                    </select>
+                                    <div id="invalidType" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="pricePhone">Price phone</label>
+                                    <input type="text" class="form-control" id="pricePhone"
+                                        placeholder="Input price phone" value="" required>
+                                    <div id="invalidPrice" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="screenPhone">Screen phone</label>
+                                    <input type="text" class="form-control" id="screenPhone"
+                                        placeholder="Input screen phone" value="" required>
+                                    <div id="invalidScreen" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="backCam">Back Camera</label>
+                                    <input type="text" class="form-control" id="backCam" placeholder="Input back camera"
+                                        value="" required>
+                                    <div id="invalidBack" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="frontCam">Front Camera</label>
+                                    <input type="text" class="form-control" id="frontCam"
+                                        placeholder="Input front camera" value="" required>
+                                    <div id="invalidFront" class="invalid-feedback">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-group">
+
+                                    <label for="imgPhone">Img Product</label>
+                                    <input type="text" class="form-control" id="imgPhone" placeholder="Input link image"
+                                        value="" required>
+                                </div>
+                            </div>
+                            <div id="invalidImg" class="invalid-feedback">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descPhone">Describe</label>
+                                <textarea class="form-control" id="descPhone" rows="3"></textarea>
+                                <div id="invalidDesc" class="invalid-feedback">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-modal" id="btnUpdate">Update</button>
+                        <button type="button" class="btn btn-modal" id="btnAddPhone">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- -----------------------BS4----------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="../controllers/admin.js"></script>
+</body>
+
+</html>
