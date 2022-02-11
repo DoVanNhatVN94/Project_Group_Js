@@ -65,6 +65,12 @@ a, button {
     line-height: inherit;
     text-decoration: none;
     cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    // color: white;
+    cursor: pointer;
+    transition: 0.5s;
 }
 .btn:focus{
     box-shadow: none;
@@ -86,7 +92,23 @@ a:hover {
 button, input[type="submit"] {
     cursor: pointer;
 }
-img {max-width:100%;height:auto}
+// img {border-style: none;vertical-align: middle;object-fit: contain;
+//     max-width: 100%;
+//    max-height: 100%;
+//    width: auto;
+//    height: auto;}
+img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    object-fit: contain;
+}
+.card__img{
+    height: 300px;
+}
 ul {
     list-style: outside none none;
     margin: 0;
