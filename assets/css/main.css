@@ -270,6 +270,22 @@ figure {
   margin-right: 10px;
 }
 
+.main_header .header_icon li .fa-shopping-cart {
+  position: relative;
+}
+
+.main_header .header_icon li .fa-shopping-cart::after {
+  content: "2";
+  font-size: 10px;
+  top: -2px;
+  right: 0;
+  position: absolute;
+  background-color: wheat;
+  border-radius: 50%;
+  color: blue;
+  padding: 5px;
+}
+
 .main_header .header_icon li button i {
   font-size: 20px;
 }

@@ -1,11 +1,26 @@
 .main_header {
   .header_icon {
-    
     li {
+      .fa-shopping-cart {
+        position: relative;
+        &::after {
+          content: "2";
+          font-size: 10px;
+          top: -2px;
+          right: 0;
+          position: absolute;
+          background-color: wheat;
+          border-radius: 50%;
+          color: blue;
+          padding: 5px;
+          opacity: 0.7;
+          font-weight: 700;
+        }
+      }
       font-size: 20px;
       margin-right: 10px;
-      button{
-        i{
+      button {
+        i {
           font-size: 20px;
         }
       }

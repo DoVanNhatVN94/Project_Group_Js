@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "kiteco.kite"
+        "kiteco.kite",
+        "ritwickdey.LiveServer"
     ]
 }
