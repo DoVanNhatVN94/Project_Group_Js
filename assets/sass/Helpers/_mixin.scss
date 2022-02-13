@@ -32,3 +32,23 @@
     opacity: $opacity;
     -ms-filter: $opacity;
 }
+
+
+// trang admin
+
+@mixin hearderText($color, $fs, $fw, $pd, $mg) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    padding: $pd;
+    margin: $mg;
+}
+@mixin borderRose() {
+    border: 1px solid #d8ed29;
+    color: white;
+    &:focus {
+        box-shadow: 0 0 45px 0 rgba(8, 8, 8, 0.582);
+        color: #d8ed29;
+    }
+}

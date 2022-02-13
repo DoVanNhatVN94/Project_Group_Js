@@ -1,42 +1,36 @@
-class ProductService {
+export default class ProductServices {
     constructor() {
-        this.mang = [];
     }
-    layDS = () => {
+    getProduct() {
         return axios({
-            // trả về đối tượng của AXIOS
             method: 'get',
             url: 'https://61ebb6137ec58900177cdd3d.mockapi.io/Product',
-            // responseType: 'stream'
         });
     }
-    themSP = (sp) => {
-        //Trả về đối tượng axios
+    addProduct(product) {
         return axios({
             method: 'post',
             url: 'https://61ebb6137ec58900177cdd3d.mockapi.io/Product',
-            data: sp
+            data: product,
         });
     }
-    xoaSP = (name) => {
+    deleteProduct(id) {
         return axios({
             method: 'delete',
-            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${name}`,
-
+            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
         });
     }
-    layID = (id) => {
+    watchProduct(id) {
         return axios({
             method: 'get',
             url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
-
         });
     }
-    capNhap=(id,sp)=>{
+    updateProduct(id, product) {
         return axios({
             method: 'put',
             url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
-            data: sp
+            data: product,
         });
     }
 }
