@@ -1,29 +1,109 @@
 .main_header {
+  span {
+    color: rgba(0, 0, 0, 0.685);
+  }
+  .form-control {
+    padding: 1rem 0.75rem;
+    border-radius: 25px;
+    border: 1px solid wheat;
+  }
   .header_icon {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 65px 20px 65px 35px;
+    font-size: 20px;
+    border-left: 2px solid rgb(241, 236, 227);
+    border-right: 2px solid rgb(241, 236, 227);
     li {
-      .fa-shopping-cart {
-        position: relative;
-        &::after {
-          content: "2";
-          font-size: 10px;
-          top: -2px;
-          right: 0;
-          position: absolute;
-          background-color: wheat;
-          border-radius: 50%;
-          color: blue;
-          padding: 5px;
-          opacity: 0.7;
-          font-weight: 700;
-        }
+      padding-right: 15px;
+      .count {
+        font-size: 10px;
+        top: -15px;
+        right: -0;
+        position: absolute;
+        border-radius: 50%;
+        color: black;
+        padding: 5px;
+        opacity: 0.7;
+        font-weight: 700;
+        z-index: 0.9;
       }
-      font-size: 20px;
-      margin-right: 10px;
-      button {
-        i {
-          font-size: 20px;
-        }
+    }
+    .relative {
+      &::after {
+        content: "";
+        font-size: 10px;
+        top: -8px;
+        right: 0;
+        position: absolute;
+        border-radius: 50%;
+        color: blue;
+        padding: 10px;
+        opacity: 0.7;
+        font-weight: 700;
+        background-color: wheat;
+        z-index: -1;
       }
+    }
+
+    button {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+  .header_top {
+    .dropbtn {
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  .header_mid {
+    border-top: 2px solid rgb(241, 236, 227);
+
+    .btn-outline-primary {
+      font-weight: 700;
+      background-color: rgba(240, 214, 161, 0.397);
+      color: rgb(99, 83, 55);
+      border: 1px solid wheat;
+      &:hover {
+        background-color: wheat;
+        color: black;
+      }
+    }
+  }
+  .header_bottom {
+    background-color: #fff;
+    border-top: 2px solid rgb(241, 236, 227);
+    .nav-link {
+      color: rgb(214, 186, 132);
+      font-size: 16px;
+      font-weight: 600;
+
+      &:hover {
+        color: wheat;
+      }
+    }
+  }
+  .navbar {
+    padding: 0;
+    margin: 0;
+  }
+  .navbar-light .navbar-nav .nav-link.active {
+    color: rgb(221, 149, 14);
+  }
+  .nav-link {
+    padding: 10px 50px;
+  }
+  .fixed {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    .container {
+      width: 100vw;
     }
   }
 }

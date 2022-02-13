@@ -1,5 +1,14 @@
 .carousel{
   background-color: #040404;
+  .btn-outline-primary{
+    color: wheat;
+    font-weight: 500;
+    border: 1px solid wheat;
+    &:hover{
+      background-color: wheat;
+      color: #040404;
+    }
+  }
     .pc_carousel_content {
         position: relative;
         .item__pc__bg {
@@ -16,13 +25,22 @@
             background-image: url(../img/ArtCarousel/iphone13rose.jpg);  
           }
           .pc__bg__02 {
-            background-image: url(../img/ArtCarousel/mi11.jpeg);
+            background-image: url(../img/ArtCarousel/iphone13black.jpg);
           }
           .pc__bg__03 {
-            background-image: url(../img/ArtCarousel/zfold3.jpg);
+            background-image: url(../img/ArtCarousel/iphone2.jpg);
           }
           .pc__bg__04 {
-            background-image: url(../img/ArtCarousel/oppo11.jpg);
+            background-image: url(../img/ArtCarousel/iphone3.jpg);
+          }
+          .pc__bg__05 {
+            background-image: url(../img/ArtCarousel/op1.jpg);
+          }
+          .pc__bg__06 {
+            background-image: url(../img/ArtCarousel/ss1.jpg);
+          }
+          .pc__bg__07 {
+            background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
           }
           .item__pc__content {
             width: 100%;
@@ -31,10 +49,20 @@
             transform: translateY(-50%);
           }
       }
+      .owl-stage{
+        transition: 1s;
+        &:hover h5{
+          font-size: 60px;
+        }
+        &:hover p{
+          font-size: 30px;
+        }
+      }
       h5{
         color: wheat;
         font-size: 45px;
         font-weight: 600;
+        transition: 1s;
       }
       p {
         color: #fff;
@@ -42,6 +70,7 @@
         font-weight: 400;
         text-transform: capitalize;
         line-height: 30px;
+        transition: 1s;
         opacity: 0.9;
       }
       .owl-dots {

@@ -1,0 +1,43 @@
+.sale{
+    background: rgba(0, 0, 0, 0.836);
+    padding: 100px 0;
+    height: 900px;
+    h2{
+        position: absolute;
+        top: 80%;
+        left: 20%;
+        color: wheat;
+        font-size: x-large;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+    .big_sale{
+        position: relative;
+        background-size:cover;
+        height: 80vh;
+        width: auto;
+        // background-position: center;
+        background-repeat: no-repeat;
+        
+        background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
+        transition: 1s;
+        &:hover{
+           opacity: 0.7;
+           height: 90vh
+        }
+    }
+    .top_product{
+        position: relative;
+        background-size: cover;
+        height: 80vh;
+        // background-position: center;
+        background-repeat: no-repeat;
+        
+        background-image: url(../img/ArtCarousel/iphone13black.jpg);
+        transition: 1s;
+        &:hover{
+           opacity: 0.7;
+           height: 90vh
+        }
+    }
+}

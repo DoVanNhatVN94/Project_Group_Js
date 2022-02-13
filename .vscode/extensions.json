@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "kiteco.kite",
-        "ritwickdey.LiveServer"
+        "ritwickdey.liveserver",
+        "sibiraj-s.vscode-scss-formatter"
     ]
 }

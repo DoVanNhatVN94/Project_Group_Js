@@ -3,8 +3,8 @@
 
 .footer_top{
 	padding: 99px 0 89px;
-    border-top: 1px solid $grey_color;
-    border-bottom: 1px solid $grey_color;
+    border-top: 1px solid wheat;
+    border-bottom: 1px solid wheat;
     @media #{$tablet-device}{
         padding: 79px 0 31px;
     }
@@ -121,7 +121,7 @@
                 font-size: 15px;
                 line-height: 30px;
                 &:hover{
-                    color: $secondary_color;
+                    color: rgb(221, 149, 14);
                 }
                 @media #{$tablet-device}{
                     font-size: 14px;
@@ -164,8 +164,8 @@
                 background: #f2f2f2;
                 border-radius: 50%;
                 &:hover{
-                    color: $white;
-                    background: $secondary_color;
+                    color: white;
+                    background: rgb(255, 213, 136);
                 }
                 @media #{$large-mobile}{
                     width: 35px;
@@ -192,7 +192,7 @@
             line-height: 20px;
         }
         & a{
-            color: $secondary_color;
+            color: rgb(248, 184, 66);
             &:hover{
                 text-decoration: underline;
             }
@@ -215,7 +215,7 @@
                 font-size: 14px;
                 line-height: 30px;
                 &:hover{
-                    color: $secondary_color;
+                    color: rgb(221, 149, 14);
                 }
             }
         }

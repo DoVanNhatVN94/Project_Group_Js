@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9,6 +8,8 @@
 /* transform */
 /* opacity */
 * {
+  padding: 0;
+  margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -16,7 +17,6 @@
 /*----------------------------------------*/
 /*  01. Theme default CSS
 /*----------------------------------------*/
-/*-- Google Font --*/
 /*-- Common Style --*/
 *,
 *::after,
@@ -27,6 +27,7 @@
 
 html,
 body {
+  position: relative;
   height: 100%;
 }
 
@@ -59,11 +60,15 @@ h1 {
 h2 {
   font-size: 36px;
   line-height: 36px;
+  margin: 0;
+  padding: 0;
 }
 
 h3 {
   font-size: 30px;
   line-height: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 h4 {
@@ -84,6 +89,14 @@ h6 {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+button:hover {
+  color: wheat;
 }
 
 a,
@@ -126,6 +139,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
+  color: wheat;
 }
 
 button,
@@ -203,7 +217,6 @@ figure {
     - DropDown
 -----------------------------------------*/
 .dropbtn {
-  padding: 5px;
   font-size: 16px;
   border: none;
 }
@@ -220,7 +233,7 @@ figure {
   min-width: 160px;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 10;
 }
 
 .dropdown-content a {
@@ -231,7 +244,7 @@ figure {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #eee0c7;
 }
 
 .dropdown:hover .dropdown-content {
@@ -265,33 +278,134 @@ figure {
   transition: 0.5s;
 }
 
-.main_header .header_icon li {
+.main_header span {
+  color: rgba(0, 0, 0, 0.685);
+}
+
+.main_header .form-control {
+  padding: 1rem 0.75rem;
+  border-radius: 25px;
+  border: 1px solid wheat;
+}
+
+.main_header .header_icon {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding: 65px 20px 65px 35px;
   font-size: 20px;
-  margin-right: 10px;
+  border-left: 2px solid #f1ece3;
+  border-right: 2px solid #f1ece3;
 }
 
-.main_header .header_icon li .fa-shopping-cart {
-  position: relative;
+.main_header .header_icon li {
+  padding-right: 15px;
 }
 
-.main_header .header_icon li .fa-shopping-cart::after {
-  content: "2";
+.main_header .header_icon li .count {
   font-size: 10px;
-  top: -2px;
+  top: -15px;
+  right: -0;
+  position: absolute;
+  border-radius: 50%;
+  color: black;
+  padding: 5px;
+  opacity: 0.7;
+  font-weight: 700;
+  z-index: 0.9;
+}
+
+.main_header .header_icon .relative::after {
+  content: "";
+  font-size: 10px;
+  top: -8px;
   right: 0;
   position: absolute;
-  background-color: wheat;
   border-radius: 50%;
   color: blue;
-  padding: 5px;
+  padding: 10px;
+  opacity: 0.7;
+  font-weight: 700;
+  background-color: wheat;
+  z-index: -1;
 }
 
-.main_header .header_icon li button i {
+.main_header .header_icon button i {
   font-size: 20px;
+}
+
+.main_header .header_top .dropbtn:hover {
+  color: black;
+}
+
+.main_header .header_mid {
+  border-top: 2px solid #f1ece3;
+}
+
+.main_header .header_mid .btn-outline-primary {
+  font-weight: 700;
+  background-color: rgba(240, 214, 161, 0.397);
+  color: #635337;
+  border: 1px solid wheat;
+}
+
+.main_header .header_mid .btn-outline-primary:hover {
+  background-color: wheat;
+  color: black;
+}
+
+.main_header .header_bottom {
+  background-color: #fff;
+  border-top: 2px solid #f1ece3;
+}
+
+.main_header .header_bottom .nav-link {
+  color: #d6ba84;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.main_header .header_bottom .nav-link:hover {
+  color: wheat;
+}
+
+.main_header .navbar {
+  padding: 0;
+  margin: 0;
+}
+
+.main_header .navbar-light .navbar-nav .nav-link.active {
+  color: #dd950e;
+}
+
+.main_header .nav-link {
+  padding: 10px 50px;
+}
+
+.main_header .fixed {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.main_header .fixed .container {
+  width: 100vw;
 }
 
 .carousel {
   background-color: #040404;
+}
+
+.carousel .btn-outline-primary {
+  color: wheat;
+  font-weight: 500;
+  border: 1px solid wheat;
+}
+
+.carousel .btn-outline-primary:hover {
+  background-color: wheat;
+  color: #040404;
 }
 
 .carousel .pc_carousel_content {
@@ -313,15 +427,27 @@ figure {
 }
 
 .carousel .pc_carousel_content .pc__bg__02 {
-  background-image: url(../img/ArtCarousel/mi11.jpeg);
+  background-image: url(../img/ArtCarousel/iphone13black.jpg);
 }
 
 .carousel .pc_carousel_content .pc__bg__03 {
-  background-image: url(../img/ArtCarousel/zfold3.jpg);
+  background-image: url(../img/ArtCarousel/iphone2.jpg);
 }
 
 .carousel .pc_carousel_content .pc__bg__04 {
-  background-image: url(../img/ArtCarousel/oppo11.jpg);
+  background-image: url(../img/ArtCarousel/iphone3.jpg);
+}
+
+.carousel .pc_carousel_content .pc__bg__05 {
+  background-image: url(../img/ArtCarousel/op1.jpg);
+}
+
+.carousel .pc_carousel_content .pc__bg__06 {
+  background-image: url(../img/ArtCarousel/ss1.jpg);
+}
+
+.carousel .pc_carousel_content .pc__bg__07 {
+  background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
 }
 
 .carousel .pc_carousel_content .item__pc__content {
@@ -332,10 +458,25 @@ figure {
           transform: translateY(-50%);
 }
 
+.carousel .owl-stage {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.carousel .owl-stage:hover h5 {
+  font-size: 60px;
+}
+
+.carousel .owl-stage:hover p {
+  font-size: 30px;
+}
+
 .carousel h5 {
   color: wheat;
   font-size: 45px;
   font-weight: 600;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .carousel p {
@@ -344,6 +485,8 @@ figure {
   font-weight: 400;
   text-transform: capitalize;
   line-height: 30px;
+  -webkit-transition: 1s;
+  transition: 1s;
   opacity: 0.9;
 }
 
@@ -379,69 +522,118 @@ figure {
   height: 10px;
 }
 
+.sale {
+  background: rgba(0, 0, 0, 0.836);
+  padding: 100px 0;
+  height: 900px;
+}
+
+.sale h2 {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  color: wheat;
+  font-size: x-large;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.sale .big_sale {
+  position: relative;
+  background-size: cover;
+  height: 80vh;
+  width: auto;
+  background-repeat: no-repeat;
+  background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.sale .big_sale:hover {
+  opacity: 0.7;
+  height: 90vh;
+}
+
+.sale .top_product {
+  position: relative;
+  background-size: cover;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-image: url(../img/ArtCarousel/iphone13black.jpg);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.sale .top_product:hover {
+  opacity: 0.7;
+  height: 90vh;
+}
+
+.productList {
+  background: #f0e9dd;
+  padding: 100px 0;
+}
+
+.productList h2 {
+  color: #d8ab51;
+  font-weight: 700;
+}
+
+.productList h3 {
+  color: black;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.card_bg {
+  background: transparent;
+  padding: 25px;
+}
+
 .card {
   height: 500px;
   position: relative;
   overflow: hidden;
 }
 
+.card:hover .card_text {
+  display: block;
+}
+
+.card .card_img img {
+  width: 324px;
+  height: 200px;
+  display: block;
+}
+
 .card:hover .card-body {
   bottom: 50px;
 }
 
-.card:hover {
-  opacity: 1;
-  z-index: 2;
-}
-
-.card:hover .img__icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
+.card .card_name {
+  color: black;
   font-size: 20px;
+  font-weight: 500;
 }
 
-.card:hover .img__icon .wishlist:hover {
-  color: #0d6efd;
+.card .card_text {
+  color: rgba(0, 0, 0, 0.842);
+  font-size: 16;
+  font-weight: 400;
+  display: none;
 }
 
-.card:hover .img__icon .cart:hover {
-  color: #0d6efd;
-}
-
-.card:hover .img__icon ul li {
-  padding-bottom: 10px;
-}
-
-.card-body {
-  height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  bottom: -50px;
-  position: absolute;
+.card .card_price {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /*  07. footer area css here */
 .footer_top {
   padding: 99px 0 89px;
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid wheat;
+  border-bottom: 1px solid wheat;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -604,7 +796,7 @@ figure {
 }
 
 .footer_menu ul li a:hover {
-  color: #79a206;
+  color: #dd950e;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -665,8 +857,8 @@ figure {
 }
 
 .footer_social ul li a:hover {
-  color: #ffffff;
-  background: #79a206;
+  color: white;
+  background: #ffd588;
 }
 
 @media only screen and (max-width: 767px) {
@@ -699,7 +891,7 @@ figure {
 }
 
 .copyright_area p a {
-  color: #79a206;
+  color: #f8b842;
 }
 
 .copyright_area p a:hover {
@@ -731,7 +923,7 @@ figure {
 }
 
 .footer_widgetnav_menu ul li a:hover {
-  color: #79a206;
+  color: #dd950e;
 }
 
 .footer_app {
