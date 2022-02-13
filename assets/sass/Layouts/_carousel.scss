@@ -1,0 +1,72 @@
+.carousel{
+  background-color: #040404;
+    .pc_carousel_content {
+        position: relative;
+        .item__pc__bg {
+            min-height: calc(100vh - 40px);
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            z-index: 0;
+            padding: 3em 0;
+            
+          }
+          .pc__bg__01 {
+            background-image: url(../img/ArtCarousel/iphone13rose.jpg);  
+          }
+          .pc__bg__02 {
+            background-image: url(../img/ArtCarousel/mi11.jpeg);
+          }
+          .pc__bg__03 {
+            background-image: url(../img/ArtCarousel/zfold3.jpg);
+          }
+          .pc__bg__04 {
+            background-image: url(../img/ArtCarousel/oppo11.jpg);
+          }
+          .item__pc__content {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+      }
+      h5{
+        color: wheat;
+        font-size: 45px;
+        font-weight: 600;
+      }
+      p {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 30px;
+        opacity: 0.9;
+      }
+      .owl-dots {
+        margin-top: 0px;
+        position: absolute;
+        display: flex;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%,-50%);
+      }
+      .owl-theme .owl-dots .owl-dot span {
+        width: 10px;
+        height: 10px;
+        margin: 5px 8px;
+        background: #fff;
+        display: block;
+        transition: opacity 0.2s ease;
+        border-radius: 25px;
+        position: relative;
+        opacity: 0.9;
+      }
+      .owl-theme .owl-dots .owl-dot.active span,
+      .owl-theme .owl-dots .owl-dot:hover span {
+        background: wheat;
+        width: 30px;
+        height: 10px;
+      }
+}
