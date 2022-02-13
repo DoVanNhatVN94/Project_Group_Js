@@ -594,20 +594,37 @@ figure {
   height: 500px;
   position: relative;
   overflow: hidden;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .card:hover .card_text {
   display: block;
 }
 
+.card p {
+  margin-bottom: 5px;
+}
+
+.card .card_type {
+  background-color: wheat;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  z-index: 1;
+  opacity: 0.8;
+  padding: 5px;
+}
+
+.card .card_type span {
+  color: black;
+  font-size: 16px;
+}
+
 .card .card_img img {
   width: 324px;
   height: 200px;
   display: block;
-}
-
-.card:hover .card-body {
-  bottom: 50px;
 }
 
 .card .card_name {
@@ -621,6 +638,8 @@ figure {
   font-size: 16;
   font-weight: 400;
   display: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .card .card_price {
@@ -679,6 +698,7 @@ figure {
 }
 
 .widgets_container h3 {
+  color: #d6ba84;
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 31px;

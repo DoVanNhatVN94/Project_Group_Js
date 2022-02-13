@@ -20,20 +20,31 @@
   height: 500px;
   position: relative;
   overflow: hidden;
+  transition: 1s;
   &:hover .card_text{
     display: block;
+  }
+  p{
+    margin-bottom: 5px;
+  }
+  .card_type{
+    background-color: wheat;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    z-index: 1;
+    opacity: 0.8;
+    padding: 5px;
+    span{
+      color: black;
+      font-size: 16px;
+    }
   }
   .card_img {
     img {
       width: 324px;
       height: 200px;
       display: block;
-    }
-  }
-
-  &:hover {
-    .card-body {
-      bottom: 50px;
     }
   }
   .card_name{
@@ -46,6 +57,7 @@
     font-size: 16;
     font-weight: 400;
     display: none;
+    transition: 1s;
     
   }
   .card_price{
@@ -53,7 +65,6 @@
     font-size: 20px;
     font-weight: 500;
   }
-  
 }
 // .card-body {
 //   height: 200px;

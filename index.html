@@ -70,7 +70,7 @@
                             <li class="dropdown">
                                 <button class="dropbtn"><i class="fa fa-user "></i></button>
                                 <div class="dropdown-content">
-                                    <a href="#">Login</a>
+                                    <a href="./view/admin/admin.html">Login</a>
                                     <a href="#">Infor</a>
                                     <a href="#">Logout</a>
                                 </div>
@@ -300,8 +300,8 @@
                             <option selected>Choses Type SP</option>
                             <option value="Samsung">Samsung</option>
                             <option value="Iphone">Iphone</option>
-                            <option value="Samsung"></option>
-                            <option value="Samsung"></option>
+                            <option value="Xiaomi">Xiaomi</option>
+                            <option value="Oppo">Oppo</option>
                         </select>
                     </form>
                    </div>
@@ -345,13 +345,16 @@
                     <div class="col-6 col-lg-4">
                         <div class="card_bg">
                             <div class="card">
+                                <div class="card_type"><span>Iphone</span></div>
                                 <div class="card_img">
                                     <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..." width="324" height="200">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card_name" id="card_name">Iphone 13 ProMax</h5>
-                                    <p class="card_text" id="card_text">Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.</p>
+                                    <p class="card_text">Screen: "screen 68"</p>
+                                    <p class="card_text">BackCamera: "2 camera 12 MP"</p>
+                                    <p class="card_text">FrontCamera: "7 MP"    </p>
+                                    <p class="card_text" id="card_text">Mô tả : "Thiết kế mang tính đột phá" .</p>
                                     <span>Gia: </span><p class="card_price">30.000.000 VND</p>
                                     <button class="btn btn-primary">ADD</button>
                                 </div>
@@ -518,8 +521,8 @@
                 nav: false,
                 responsiveClass: true,
                 autoplay: true,
-                autoplayTimeout: 5000,
-                autoplaySpeed: 1000,
+                autoplayTimeout: 2000,
+                autoplaySpeed: 2000,
                 autoplayHoverPause: false,
                 responsive: {
                     0: {
