@@ -41,7 +41,6 @@
 //   },
 // ];
 
-
 let pdSER = new ProductService();
 let ProductList = [];
 let cart = [];
@@ -133,30 +132,31 @@ let onchangeType = () => {
 };
 let addToCart = (id) => {
   let vitri = timVT(id);
-  console.log("id: ",id);
-  console.log("vt: ",vitri);
-  
-  let productCart = {...ProductList[vitri]};
-  console.log("product: ",productCart);
+  console.log("id: ", id);
+  console.log("vt: ", vitri);
 
-  if(cart.some((item)=>{
-    if(item.product.id == id)
-    return true;
-  })){
-      cart.map((item) => {
-        if (item.product.id == id) item.quantity++;
-      })}
-      else {
-          let cartItem = new CartItem(productCart);
-          cart.push(cartItem);
-        }
-        console.log(cart);
+  let productCart = { ...ProductList[vitri] };
+  console.log("product: ", productCart);
+
+  if (
+    cart.some((item) => {
+      if (item.product.id == id) return true;
+    })
+  ) {
+    cart.map((item) => {
+      if (item.product.id == id) item.quantity++;
+    });
+  } else {
+    let cartItem = new CartItem(productCart);
+    cart.push(cartItem);
+  }
+  console.log(cart);
 
   setLocalStorage(cart);
   showNumberCart(cart.length);
 };
 
-// * Tìm vị trí của product * 
+// * Tìm vị trí của product *
 let timVT = (id) => {
   console.log(id);
   let vitri = -1;
@@ -168,45 +168,45 @@ let timVT = (id) => {
 };
 
 // Hiện Number trên icon shop cart
-function showNumberCart(number){
-document.getElementById("count").innerHTML = number;
+function showNumberCart(number) {
+  document.getElementById("count").innerHTML = number;
 }
 
-
-
-function listCart(mang){
+function listCart(mang) {
   let content = "";
   let count = 1;
   mang.map((sp) => {
     content += `
     <div class="cart-item">
-    <div class="cart-img">
-      <img src="${sp.product.img}" alt="">
-    </div>
-    <strong class="name">${sp.product.name}</strong>
-    <span class="qty-change">
-  <div>
-    <button class="btn-qty" onclick="qtyChange(this,'sub')"><i class="fas fa-chevron-left"></i></button>
-    <p class="qty">1</p>
-    <button class="btn-qty" onclick="qtyChange(this,'add')"><i class="fas fa-chevron-right"></i></button>
-  </div></span>
+      <div class="cart-img">
+        <img src="${sp.product.img}" alt="">
+       </div>
+      <strong class="name">${sp.product.name}</strong>
+      <span class="qty-change">
+  
+        <button class="btn-qty" onclick="qtyChange(this,'sub')"><i class="fas fa-chevron-left"></i></button>
+        <p class="qty">1</p>
+        <button class="btn-qty" onclick="qtyChange(this,'add')"><i class="fas fa-chevron-right"></i></button>
+  
+      </span>
     <p class="price">$ ${sp.product.price}</p>
-    <button onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+    
+    <button class="btn-rm" onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+  
   </div>
       `;
     count++;
   });
   document.getElementsByClassName("cart-items")[0].innerHTML = content;
-};
+}
 
-function sideNav(e){
-  let t=document.getElementsByClassName("side_nav")[0],
-  n=document.getElementsByClassName("cover")[0];
-t.style.right=e?"0":"-100%",n.style.display=e?"block":"none"}
+function sideNav(e) {
+  let t = document.getElementsByClassName("side_nav")[0],
+    n = document.getElementsByClassName("cover")[0];
+  (t.style.right = e ? "0" : "-100%"), (n.style.display = e ? "block" : "none");
+}
 
-
-
-// * setLocalStorage * 
+// * setLocalStorage *
 function setLocalStorage(mang) {
   localStorage.setItem("DSSP", JSON.stringify(mang));
 }
@@ -216,7 +216,7 @@ function getLocalStorage() {
   if (localStorage.getItem("DSSP") != null) {
     cart = JSON.parse(localStorage.getItem("DSSP"));
     listCart(cart);
-    console.log("Mang cart",cart);
+    console.log("Mang cart", cart);
     console.log(document.getElementsByClassName("cart-items")[0]);
   }
 }

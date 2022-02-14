@@ -21,6 +21,7 @@
   position: relative;
   overflow: hidden;
   transition: 1s;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.582);
   &:hover .card_text{
     display: block;
   }
