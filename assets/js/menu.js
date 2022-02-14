@@ -1,2 +1,0 @@
- /*---stickey menu---*/
- 

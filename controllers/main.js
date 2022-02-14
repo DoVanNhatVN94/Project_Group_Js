@@ -113,15 +113,16 @@ let onchangeType = () => {
   //   .catch((error) => {
   //     console.log(error);
   //   });
-  array =[...data];
+  array = [...data];
   array.map((sp, index) => {
-          if (sp.type == x) {
-            array2.push(array[index]);
-          }
-        });
-        if (array2.length == 0) array2 = [...array];
-        listSanPham(array2);
-      
+    if (sp.type == x) {
+      array2.push(array[index]);
+    }
+  });
+  if (array2.length == 0) {
+    array2 = [...array];
+     alert(`"không có ${x}"`);
+  } else listSanPham(array2);
 };
 let addToCart = (id) => {
   let vitri = timVT(id);
