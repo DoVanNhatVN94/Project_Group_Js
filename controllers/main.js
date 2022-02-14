@@ -1,65 +1,66 @@
-let data = [
-  {
-    name: "iphoneX",
-    price: "1000",
-    screen: "screen 68",
-    backCamera: "2 camera 12 MP",
-    frontCamera: "7 MP",
-    img: "https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg",
-    desc: "Thiết kế mang tính đột phá",
-    type: "iphone",
-  },
-  {
-    name: "Samsung Galaxy M51 ",
-    price: "$35",
-    screen: "screen 69",
-    backCamera: " Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP",
-    frontCamera: " 32 MP",
-    img: "https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg",
-    desc: '"Thiết kế đột phá, màn hình tuyệt đỉnh"',
-    type: "Samsung",
-  },
-  {
-    name: "Samsung Galaxy M22",
-    price: "45000",
-    screen: "screen 70",
-    backCamera: "Chính 12 MP & Phụ 64 MP, 12 MP",
-    frontCamera: " 32 MP",
-    img: "https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg",
-    desc: "Thiết kế mang tính đột phá",
-    type: "Samsung",
-  },
-  {
-    name: "Iphone 11",
-    price: "1000",
-    screen: "screen 54",
-    backCamera: "Camera: Chính 12 MP & Phụ 64 MP, 12 MP",
-    frontCamera: "32 MP",
-    img: "https://didongviet.vn/pub/media/catalog/product//i/p/iphone-11-pro-max-256gb-didongviet_23.jpg",
-    desc: "Thiết kế đột phá, màn hình tuyệt đỉnh",
-    type: "Iphone",
-  },
-];
-console.log("data", data);
+// let data = [
+//   {
+//     name: "iphoneX",
+//     price: "1000",
+//     screen: "screen 68",
+//     backCamera: "2 camera 12 MP",
+//     frontCamera: "7 MP",
+//     img: "https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg",
+//     desc: "Thiết kế mang tính đột phá",
+//     type: "iphone",
+//   },
+//   {
+//     name: "Samsung Galaxy M51 ",
+//     price: "$35",
+//     screen: "screen 69",
+//     backCamera: " Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP",
+//     frontCamera: " 32 MP",
+//     img: "https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg",
+//     desc: '"Thiết kế đột phá, màn hình tuyệt đỉnh"',
+//     type: "Samsung",
+//   },
+//   {
+//     name: "Samsung Galaxy M22",
+//     price: "45000",
+//     screen: "screen 70",
+//     backCamera: "Chính 12 MP & Phụ 64 MP, 12 MP",
+//     frontCamera: " 32 MP",
+//     img: "https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg",
+//     desc: "Thiết kế mang tính đột phá",
+//     type: "Samsung",
+//   },
+//   {
+//     name: "Iphone 11",
+//     price: "1000",
+//     screen: "screen 54",
+//     backCamera: "Camera: Chính 12 MP & Phụ 64 MP, 12 MP",
+//     frontCamera: "32 MP",
+//     img: "https://didongviet.vn/pub/media/catalog/product//i/p/iphone-11-pro-max-256gb-didongviet_23.jpg",
+//     desc: "Thiết kế đột phá, màn hình tuyệt đỉnh",
+//     type: "Iphone",
+//   },
+// ];
+
 
 let pdSER = new ProductService();
 let ProductList = [];
 let cart = [];
 getLocalStorage();
+showNumberCart(cart.length);
 
 let layDanhSach = () => {
-  // pdSER
-  //   .layDS()
-  //   .then((result) => {
-  //     console.log(result.data);
-  //     ProductList = [...result.data];
-  //     listSanPham(ProductList);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-
-  listSanPham(data);
+  pdSER
+    .layDS()
+    .then((result) => {
+      console.log(result.data);
+      ProductList = [...result.data];
+      listSanPham(ProductList);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  //mockapi loi?
+  // listSanPham(data);
 };
 let listSanPham = (mang) => {
   let content = "";
@@ -79,7 +80,7 @@ let listSanPham = (mang) => {
                                     <p class="card_text">FrontCamera: "${sp.frontCamera}"    </p>
                                     <p class="card_text" id="card_text">Mô tả : "${sp.desc}" .</p>
                 <span>Gia: </span><p class="card_price">${sp.price} VND</p>
-                <button class="btn btn-primary">ADD</button>
+                <button class="btn btn-primary" onclick="addToCart('${sp.id}')">ADD</button>
             </div>
         </div>
     </div>
@@ -95,102 +96,127 @@ let onchangeType = () => {
   console.log(x);
   let array = [];
   let array2 = [];
-  // pdSER
-  //   .layDS()
-  //   .then((result) => {
-  //     console.log(result.data);
-  //     array = result.data;
-  //     array.map((sp, index) => {
-  //       if (sp.type == x) {
-  //         array2.push(array[index]);
-  //       }
-  //     });
-  //     if (array2.length == 0) array2 = array;
-  //     console.log(array2);
-  //     listSanPham(array2);
-  //   })
+  pdSER
+    .layDS()
+    .then((result) => {
+      console.log(result.data);
+      array = [...result.data];
+      array.map((sp, index) => {
+        if (sp.type == x) {
+          array2.push(array[index]);
+        }
+      });
+      if (array2.length == 0) {
+        array2 = [...array];
+        alert(`"không có ${x}"`);
+      }
 
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-  array = [...data];
-  array.map((sp, index) => {
-    if (sp.type == x) {
-      array2.push(array[index]);
-    }
-  });
-  if (array2.length == 0) {
-    array2 = [...array];
-     alert(`"không có ${x}"`);
-  } else listSanPham(array2);
+      listSanPham(array2);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  //mockapi loi?
+  // array = [...data];
+  // array.map((sp, index) => {
+  //   if (sp.type == x) {
+  //     array2.push(array[index]);
+  //   }
+  // });
+  // if (array2.length == 0) {
+  //   array2=[...array];
+  //   alert(`"không có ${x}"`);
+  // }
+
+  // listSanPham(array2);
 };
 let addToCart = (id) => {
   let vitri = timVT(id);
-  let product = ProductList[vitri];
-  // if (cart.length == 0) {
-  //   let cartItem = new CartItem(product);
-  //   cart.push(cartItem);
-  // } else {
-  //   cart.map((item) => {
-  //     if (item.product.id == id) {
-  //       item.quantity++;
-  //     } else if (item.product.id != id) {
-  //       let cartItem = new CartItem(product);
-  //       cart.push(cartItem);
-  //     }
-  //   });
-  // }
-  const even = (item) => item.product.id == id;
-  if (cart.some(even)) {
-    cart.map((item) => {
-      if (item.product.id == id) item.quantity++;
-    });
-  } else {
-    let cartItem = new CartItem(product);
-    cart.push(cartItem);
-  }
-  console.log(cart);
+  console.log("id: ",id);
+  console.log("vt: ",vitri);
+  
+  let productCart = {...ProductList[vitri]};
+  console.log("product: ",productCart);
+
+  if(cart.some((item)=>{
+    if(item.product.id == id)
+    return true;
+  })){
+      cart.map((item) => {
+        if (item.product.id == id) item.quantity++;
+      })}
+      else {
+          let cartItem = new CartItem(productCart);
+          cart.push(cartItem);
+        }
+        console.log(cart);
 
   setLocalStorage(cart);
+  showNumberCart(cart.length);
 };
+
+// * Tìm vị trí của product * 
 let timVT = (id) => {
-  // console.log(id);
+  console.log(id);
   let vitri = -1;
   ProductList.map((item, index) => {
-    // console.log(item.id);
+    console.log(item.id);
     if (item.id == id) vitri = index;
   });
   return vitri;
 };
-function setLocalStorage(mang) {
-  localStorage.setItem("DSSP", JSON.stringify(mang));
+
+// Hiện Number trên icon shop cart
+function showNumberCart(number){
+document.getElementById("count").innerHTML = number;
 }
-function getLocalStorage() {
-  if (localStorage.getItem("DSSP") != null) {
-    cart = JSON.parse(localStorage.getItem("DSSP"));
-    // listCart(cart);
-    console.log(cart);
-    console.log();
-  }
-}
-let listCart = (mang) => {
+
+
+
+function listCart(mang){
   let content = "";
   let count = 1;
   mang.map((sp) => {
     content += `
-      <tr>
-      <td>${count}</td>
-      <td>${sp.product.name}</td>
-      <td>${sp.product.price}</td>
-      <td>${sp.product.screen}</td>
-      <td>${sp.product.backCamera}</td>
-      <td>${sp.product.frontCamera}</td>
-      <td><img src="${sp.product.img}" alt="" style="width:45px;height:auto;"></td>
-      <td>${sp.product.desc}</td>
-      <td>${sp.product.type}</td>
-  </tr>
+    <div class="cart-item">
+    <div class="cart-img">
+      <img src="${sp.product.img}" alt="">
+    </div>
+    <strong class="name">${sp.product.name}</strong>
+    <span class="qty-change">
+  <div>
+    <button class="btn-qty" onclick="qtyChange(this,'sub')"><i class="fas fa-chevron-left"></i></button>
+    <p class="qty">1</p>
+    <button class="btn-qty" onclick="qtyChange(this,'add')"><i class="fas fa-chevron-right"></i></button>
+  </div></span>
+    <p class="price">$ ${sp.product.price}</p>
+    <button onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+  </div>
       `;
     count++;
   });
-  document.getElementById("tblDanhSachSP2").innerHTML = content;
+  document.getElementsByClassName("cart-items")[0].innerHTML = content;
 };
+
+function sideNav(e){
+  let t=document.getElementsByClassName("side_nav")[0],
+  n=document.getElementsByClassName("cover")[0];
+t.style.right=e?"0":"-100%",n.style.display=e?"block":"none"}
+
+
+
+// * setLocalStorage * 
+function setLocalStorage(mang) {
+  localStorage.setItem("DSSP", JSON.stringify(mang));
+}
+
+// * getLocalStorage
+function getLocalStorage() {
+  if (localStorage.getItem("DSSP") != null) {
+    cart = JSON.parse(localStorage.getItem("DSSP"));
+    listCart(cart);
+    console.log("Mang cart",cart);
+    console.log(document.getElementsByClassName("cart-items")[0]);
+  }
+}

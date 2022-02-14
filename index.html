@@ -70,14 +70,14 @@
                             <li class="dropdown">
                                 <button class="dropbtn"><i class="fa fa-user "></i></button>
                                 <div class="dropdown-content">
-                                    <a href="./view/admin/admin.html">Login</a>
+                                    <a href="./views/admin.html">Login</a>
                                     <a href="#">Infor</a>
                                     <a href="#">Logout</a>
                                 </div>
                             </li>
                             <li><a class="fa fa-heart"></a></li>
                             <li class="relative">
-                                <a class="fa fa-shopping-cart" i></a>
+                                <button class="fa fa-shopping-cart" onclick="sideNav(1)"></button>
                                 <p class="count" id="count">2</p>
                             </li>
                         </ul>
@@ -135,6 +135,28 @@
             </div>
         </div>
     </header>
+
+
+    <section class="cart">
+        <div class="side_nav" style="right: -100%;">
+            <button onclick="sideNav(0)"><i class="fas fa-times"></i></button>
+            <h2>Cart</h2>
+            <div class="cart-items" style="right: -100%;">
+                <span class="empty-cart">Looks Like You Haven't Added Any Product In The Cart</span>
+            </div>
+            <div class="final">
+                <strong>Total: $ <span class="total">0</span></strong>
+                <div class="action">
+                    <button onclick="buy(1)" class="btn buy">Purchase <i class="fas fa-credit-card"
+                            style="color:#6665dd;"></i></button>
+                    <button onclick="clearCart()" class="btn clear">Clear Cart <i class="fas fa-trash"
+                            style="color:#bb342f;"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div onclick="sideNav(0)" class="cover"></div>
 
 
     <section class="carousel" id="home">
@@ -268,12 +290,16 @@
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <div class="big_sale">
-                        <a href=""><h2>Big Sale Products</h2></a>
+                        <a href="">
+                            <h2>Big Sale Products</h2>
+                        </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="top_product">
-                        <a href=""><h2>Top Products</h2></a>
+                        <a href="">
+                            <h2>Top Products</h2>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -290,39 +316,41 @@
         <div class="product_select">
             <div class="container">
                 <div class="row align-content-center align-items-center justify-content-center">
-                   <div class="col-3">
-                       <h3>Chose Type Product</h3>
-                   </div>
-                   <div class="col-7">
-                    <form>
-                        <select id="selectType" onchange="onchangeType()" class="form-select"
-                            aria-label="Default select example">
-                            <option selected>Choses Type SP</option>
-                            <option value="Samsung">Samsung</option>
-                            <option value="Iphone">Iphone</option>
-                            <option value="Xiaomi">Xiaomi</option>
-                            <option value="Oppo">Oppo</option>
-                        </select>
-                    </form>
-                   </div>
+                    <div class="col-3">
+                        <h3>Chose Type Product</h3>
+                    </div>
+                    <div class="col-7">
+                        <form>
+                            <select id="selectType" onchange="onchangeType()" class="form-select"
+                                aria-label="Default select example">
+                                <option selected>Choses Type SP</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="Iphone">Iphone</option>
+                                <option value="Xiaomi">Xiaomi</option>
+                                <option value="Oppo">Oppo</option>
+                            </select>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="product_content">
             <div class="container">
                 <div class="row" id="content">
-                    
+
                     <div class="col-6 col-lg-4">
                         <div class="card_bg">
                             <div class="card">
                                 <div class="card_img">
-                                    <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..." width="324" height="200">
+                                    <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..."
+                                        width="324" height="200">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card_name" id="card_name">Card title</h5>
-                                    <p class="card_text">Some quick example text to build on the card title and make up the
+                                    <p class="card_text">Some quick example text to build on the card title and make up
+                                        the
                                         bulk of the card's content.</p>
-                                        <button class="btn btn-primary">ADD</button>
+                                    <button class="btn btn-primary">ADD</button>
                                 </div>
                             </div>
                         </div>
@@ -331,13 +359,15 @@
                         <div class="card_bg">
                             <div class="card">
                                 <div class="card_img">
-                                    <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..." width="324" height="200">
+                                    <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..."
+                                        width="324" height="200">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card_name" id="card_name">Card title</h5>
-                                    <p class="card_text">Some quick example text to build on the card title and make up the
+                                    <p class="card_text">Some quick example text to build on the card title and make up
+                                        the
                                         bulk of the card's content.</p>
-                                        <button class="btn btn-primary">ADD</button>
+                                    <button class="btn btn-primary">ADD</button>
                                 </div>
                             </div>
                         </div>
@@ -347,15 +377,17 @@
                             <div class="card">
                                 <div class="card_type"><span>Iphone</span></div>
                                 <div class="card_img">
-                                    <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..." width="324" height="200">
+                                    <img src="./assets/img/ArtCarousel/iphone13rose.jpg" class="card-img-top" alt="..."
+                                        width="324" height="200">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card_name" id="card_name">Iphone 13 ProMax</h5>
                                     <p class="card_text">Screen: "screen 68"</p>
                                     <p class="card_text">BackCamera: "2 camera 12 MP"</p>
-                                    <p class="card_text">FrontCamera: "7 MP"    </p>
+                                    <p class="card_text">FrontCamera: "7 MP" </p>
                                     <p class="card_text" id="card_text">Mô tả : "Thiết kế mang tính đột phá" .</p>
-                                    <span>Gia: </span><p class="card_price">30.000.000 VND</p>
+                                    <span>Gia: </span>
+                                    <p class="card_price">30.000.000 VND</p>
                                     <button class="btn btn-primary">ADD</button>
                                 </div>
                             </div>
@@ -397,7 +429,7 @@
                     <div class="col-lg-4 col-md-5">
                         <div class="widgets_container widget_app">
                             <div class="footer_logo">
-                                <a href="index.html"><img src="./assets/img/logo.webp" alt=""></a>
+                                <a href="index.html"><img src="./assets/img/logo/logo.png" alt=""></a>
                             </div>
                             <div class="footer_widgetnav_menu">
                                 <ul>
@@ -553,7 +585,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
     </script>
     <script src="./services/ProductService.js"></script>
-    <script src="./models/Product.js"></script>
     <script src="./models/CartItem.js"></script>
     <script src="./controllers/main.js"></script>
 

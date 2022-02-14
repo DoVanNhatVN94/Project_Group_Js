@@ -66,8 +66,14 @@
   
 }
 .footer_logo{
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
     text-align: center;
+    img{
+        height: 40px;
+        width: auto;
+    }
     @media #{$tablet-device}{
         margin-bottom: 22px;
     }
