@@ -236,7 +236,7 @@ let searchProduct = () => {
                 console.log(result.data);
             }
         });
-        showTable(arrType);
+        showTable(arrType); 
     })
     .catch((error) => {
         console.log(error);
