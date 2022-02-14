@@ -58,7 +58,6 @@ document.getElementById("btnAdd").onclick = () => {
 }
 
 let addPhone = () => {
-
     let namePhone = document.getElementById("phoneName").value;
     let price = document.getElementById("pricePhone").value;
     let screen = document.getElementById("screenPhone").value;
@@ -165,18 +164,17 @@ let checkValidation = (namePhone, price, screen, backCam, frontCam, img, desc) =
     isValid &= validation.checkEmpty(backCam, "invalidBack", "Hãy nhập back camera");
     //Front camera 
     isValid &= validation.checkEmpty(frontCam, "invalidFront", "Hãy nhập front camera");
-
-    //Hinh anh: không được để trống
+    //Img: không được để trống
     isValid &= validation.checkEmpty(img, "invalidImg", "Hãy nhập hình ảnh ");
     //Type Phone: phải chọn loại
-    isValid &= validation.checkSelect("typePhone", "invalidType", "Bạn chưa chọn loại người dùng");
+    isValid &= validation.checkSelect("typePhone", "invalidType", "Bạn chưa chọn loại điện thoại");
     //Mô tả: không được để trống, không vượt quá 60 ký tự
     isValid &= validation.checkEmpty(desc, "invalidDesc", "Hãy nhập mô tả của bạn") && validation.checkDesc(desc, "invalidDesc", "Bạn đã nhập quá 60 ký tự");
     return isValid;
 }
 window.checkValidation = checkValidation;
-// Cái trên là sự kiện khi nhấn nút update 
-// Sự kiện khi nhập vào input
+
+// Nhập vào input
 document.getElementById("phoneName").onkeyup = () => {
     let namePhone = document.getElementById("phoneName").value;
     if (namePhone == "") {
@@ -223,27 +221,25 @@ document.getElementById("descPhone").onkeyup = () => {
     }
 }
 
-
-//Search
+//Search phone
 let searchProduct = () => {
-
     productServices.getProduct()
     .then((result) => {
-        let typePhone = document.getElementById("selLoai").value
+        let typePhone = document.getElementById("sreachLoai").value
         let arrType = [];
         result.data.map(function(phone){
             if(phone.type == typePhone){
                 arrType.push(phone);
-            }else if(typePhone == ""){
+            }
+            else if(typePhone == ""){
                 arrType = result.data;
                 console.log(result.data);
             }
         });
-        showTable(arrType);
+        showTable(arrType); 
     })
     .catch((error) => {
         console.log(error);
     });    
-
 }
-document.getElementById("selLoai").onclick = searchProduct;
+document.getElementById("sreachLoai").onclick = searchProduct;
