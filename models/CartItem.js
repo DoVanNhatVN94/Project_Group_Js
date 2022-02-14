@@ -3,10 +3,7 @@ class CartItem{
         this.product = product;
         this.quantity = 1;
     }
-    // addQuantity(){
-    //     this.quantity++;
-    // }
-    // finisPay(){
+    
 
     // }
 

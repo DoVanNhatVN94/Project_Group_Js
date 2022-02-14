@@ -41,6 +41,11 @@ body {
   color: #222222;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -548,6 +553,10 @@ figure {
   transition: 0.5s;
 }
 
+.cart .side_nav .price {
+  color: wheat;
+}
+
 .cart .side_nav .fa-times {
   position: absolute;
   top: 20px;
@@ -579,6 +588,12 @@ figure {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.cart .side_nav .cart-items strong {
+  margin: 0;
+  padding: 0;
+  display: contents;
 }
 
 .cart .side_nav .cart-items .empty-cart {
@@ -622,6 +637,9 @@ figure {
 }
 
 .cart .side_nav .cart-items .cart-item .qty-change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -631,6 +649,29 @@ figure {
 }
 
 .cart .side_nav .cart-items .cart-item .qty-change .qty {
+  color: wheat;
+}
+
+.cart .side_nav .cart-items .cart-item .qty-change .btn-qty {
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  margin: 0 5px;
+}
+
+.cart .side_nav .cart-items .cart-item .qty-change .btn-qty:hover {
+  background: wheat;
+  color: black;
+}
+
+.cart .side_nav .cart-items .cart-item .btn-rm {
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cart .side_nav .cart-items .cart-item .btn-rm:hover {
   color: wheat;
 }
 
@@ -659,11 +700,18 @@ figure {
 
 .cart .side_nav .final .action .btn {
   font-size: 1.2rem;
-  color: wheat;
+  color: white;
   padding: 1rem 2rem;
   border: 1px solid white;
   margin-right: 20px;
   border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cart .side_nav .final .action .btn:hover {
+  color: wheat;
+  border: 1px solid wheat;
 }
 
 .cart .side_nav strong {
@@ -762,6 +810,8 @@ figure {
   overflow: hidden;
   -webkit-transition: 1s;
   transition: 1s;
+  -webkit-box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.582);
+          box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.582);
 }
 
 .card:hover .card_text {
