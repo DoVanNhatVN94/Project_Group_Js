@@ -1,6 +1,7 @@
 .cart {
     z-index: 20;
     display: flex;
+    opacity: 0.85;
     .side_nav {
         display: flex;
         position: fixed;
@@ -107,11 +108,16 @@
                 justify-content: space-evenly;
                 .btn {
                     font-size: 1.2rem;
-                    color: wheat;
+                    color: white;
                     padding: 1rem 2rem;
                     border: 1px solid white;
                     margin-right: 20px;
                     border-radius: 10px;
+                    transition: 0.5s;
+                    &:hover{
+                        color: wheat;
+                        border: 1px solid wheat;
+                    }
                 }
             }
         }

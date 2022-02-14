@@ -700,11 +700,18 @@ figure {
 
 .cart .side_nav .final .action .btn {
   font-size: 1.2rem;
-  color: wheat;
+  color: white;
   padding: 1rem 2rem;
   border: 1px solid white;
   margin-right: 20px;
   border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cart .side_nav .final .action .btn:hover {
+  color: wheat;
+  border: 1px solid wheat;
 }
 
 .cart .side_nav strong {

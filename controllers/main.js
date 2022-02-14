@@ -45,7 +45,7 @@ let pdSER = new ProductService();
 let ProductList = [];
 let cart = [];
 getLocalStorage();
-showNumberCart(cart.length);
+
 
 let layDanhSach = () => {
   pdSER
@@ -154,6 +154,7 @@ let addToCart = (id) => {
 
   setLocalStorage(cart);
   showNumberCart(cart.length);
+  getLocalStorage();
 };
 
 // * Tìm vị trí của product *
@@ -174,7 +175,6 @@ function showNumberCart(number) {
 
 function listCart(mang) {
   let content = "";
-  let count = 1;
   mang.map((sp) => {
     content += `
     <div class="cart-item">
@@ -184,18 +184,17 @@ function listCart(mang) {
       <strong class="name">${sp.product.name}</strong>
       <span class="qty-change">
   
-        <button class="btn-qty" onclick="qtyChange(this,'sub')"><i class="fas fa-chevron-left"></i></button>
-        <p class="qty">1</p>
-        <button class="btn-qty" onclick="qtyChange(this,'add')"><i class="fas fa-chevron-right"></i></button>
+        <button class="btn-qty" onclick="qtyChange('${sp.product.id}',false)"><i class="fas fa-chevron-left"></i></button>
+        <p class="qty">${sp.quantity}</p>
+        <button class="btn-qty" onclick="qtyChange('${sp.product.id}',true)"><i class="fas fa-chevron-right"></i></button>
   
       </span>
     <p class="price">$ ${sp.product.price}</p>
     
-    <button class="btn-rm" onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+    <button class="btn-rm" onclick="removeItem('${sp.product.id}')"><i class="fas fa-trash"></i></button>
   
   </div>
       `;
-    count++;
   });
   document.getElementsByClassName("cart-items")[0].innerHTML = content;
 }
@@ -204,6 +203,54 @@ function sideNav(e) {
   let t = document.getElementsByClassName("side_nav")[0],
     n = document.getElementsByClassName("cover")[0];
   (t.style.right = e ? "0" : "-100%"), (n.style.display = e ? "block" : "none");
+}
+
+function qtyChange(id, boolean) {
+  let vt = 0;
+  cart.map((item, index) => {
+    if (item.product.id == id) {
+      vt = index;
+    }
+  });
+  if(boolean)
+  cart[vt].quantity++;
+  else
+  cart[vt].quantity--;
+  if(cart[vt].quantity==0)
+removeItem(id);
+  setLocalStorage(cart);
+  getLocalStorage();
+}
+
+function removeItem(id) {
+  // console.log(cart);
+
+  cart.map((item, index) => {
+    console.log(item.product.id, id);
+    if (item.product.id == id) cart.splice(index, 1);
+  });
+  setLocalStorage(cart);
+  getLocalStorage();
+}
+function clearCart(){
+  cart=[];
+  console.log(cart);
+  setLocalStorage(cart);
+  getLocalStorage();
+}
+function buy(){
+  clearCart();
+ alert("Cảm ơn quý khách đã chọn và mua sản phẩm này");
+}
+
+function showTotal(){
+  let total=0;
+  cart.map((item) => {
+    total += Number(item.product.price)*item.quantity;
+    
+  });
+  console.log(total);
+  document.getElementById("total").innerHTML = `${total}`;
 }
 
 // * setLocalStorage *
@@ -216,7 +263,7 @@ function getLocalStorage() {
   if (localStorage.getItem("DSSP") != null) {
     cart = JSON.parse(localStorage.getItem("DSSP"));
     listCart(cart);
-    console.log("Mang cart", cart);
-    console.log(document.getElementsByClassName("cart-items")[0]);
+    showNumberCart(cart.length);
+    showTotal();
   }
 }
