@@ -99,3 +99,25 @@
         height: 10px;
       }
 }
+@media only screen and (max-width: 992px) {
+  .carousel{
+    .carousel__bg{
+      h5{
+        font-size: 30px;
+        margin: 0;
+      }
+      p{
+        font-size: 14px;
+      }
+    }
+    .owl-stage{
+      transition: 1s;
+      &:hover h5{
+        font-size: 45px;
+      }
+      &:hover p{
+        font-size: 20px;
+      }
+    }
+  }
+}

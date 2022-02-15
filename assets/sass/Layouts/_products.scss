@@ -15,12 +15,16 @@
 .card_bg{
   background: transparent;
   padding: 25px;
+  display: flex;
+  justify-content: center;
 }
 .card {
+  width: 324px;
   height: 500px;
   position: relative;
   overflow: hidden;
   transition: 1s;
+  border: 1px solid rgba(0, 0, 0, 0.541);
   box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.582);
   &:hover .card_text{
     display: block;
@@ -43,6 +47,8 @@
     }
   }
   .card_img {
+    width: 324px;
+      height: 200px;
     img {
       width: 324px;
       height: 200px;
@@ -71,11 +77,36 @@
     transition: 1s;
   }
 }
-// .card-body {
-//   height: 200px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   bottom: -50px;
-//   position: absolute;
-// }
+
+@media only screen and (max-width: 992px){
+  .productList{
+    h2{
+      font-size: 26px;
+    }
+    h3{
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .card_name{
+      font-size: 16px
+    }
+    .card_text{
+      font-size: 12px; 
+    }
+    .card_price{
+      font-size: 16px;
+    }
+  }
+}
+@media only screen and (max-width: 767px){
+  .productList{
+    h2{
+      font-size: 20px;
+    }
+    h3{
+      font-size: 16px;
+      line-height: 1.1;
+      text-decoration: none;
+    }
+  }
+}
