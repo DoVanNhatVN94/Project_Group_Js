@@ -11,7 +11,7 @@
     height: 100%;
     width: auto;
     margin: 0;
-    padding: 65px 20px 65px 35px;
+    padding: 47px 20px 47px 35px;
     font-size: 20px;
     border-left: 2px solid rgb(241, 236, 227);
     border-right: 2px solid rgb(241, 236, 227);
@@ -77,6 +77,10 @@
   .header_bottom {
     background-color: #fff;
     border-top: 2px solid rgb(241, 236, 227);
+    .navbar-toggler{
+      border: none;
+      color: transparent;
+    }
     .nav-link {
       color: rgb(214, 186, 132);
       font-size: 16px;
@@ -106,4 +110,36 @@
       width: 100vw;
     }
   }
+}
+
+@media only screen and (max-width: 992px) {
+  .main_header {
+    .header_icon{
+      border: none;
+      padding: 0;
+      li{
+          
+          i,a,button{
+            font-size: 14px;
+          }
+        
+      }
+    }
+    .search {
+      form{
+        .form-control{
+          padding: 0.5rem 0.75rem;
+        }
+        input,button{
+          font-size: 14px;
+        }
+      }
+    }
+    .header_bottom{
+      .dropdown-content{
+        width: 100%;
+      }
+    }
+  }
+  
 }

@@ -153,18 +153,18 @@ input[type="submit"] {
 }
 
 .logo img {
-  max-width: 150px;
+  max-width: 120px;
 }
 
 @media only screen and (max-width: 767px) {
   .logo img {
-    max-width: 120px;
+    max-width: 80px;
   }
 }
 
 @media only screen and (max-width: 575px) {
   .logo img {
-    max-width: 99px;
+    max-width: 60px;
   }
 }
 
@@ -297,7 +297,7 @@ figure {
   height: 100%;
   width: auto;
   margin: 0;
-  padding: 65px 20px 65px 35px;
+  padding: 47px 20px 47px 35px;
   font-size: 20px;
   border-left: 2px solid #f1ece3;
   border-right: 2px solid #f1ece3;
@@ -364,6 +364,11 @@ figure {
   border-top: 2px solid #f1ece3;
 }
 
+.main_header .header_bottom .navbar-toggler {
+  border: none;
+  color: transparent;
+}
+
 .main_header .header_bottom .nav-link {
   color: #d6ba84;
   font-size: 16px;
@@ -396,6 +401,25 @@ figure {
 
 .main_header .fixed .container {
   width: 100vw;
+}
+
+@media only screen and (max-width: 992px) {
+  .main_header .header_icon {
+    border: none;
+    padding: 0;
+  }
+  .main_header .header_icon li i, .main_header .header_icon li a, .main_header .header_icon li button {
+    font-size: 14px;
+  }
+  .main_header .search form .form-control {
+    padding: 0.5rem 0.75rem;
+  }
+  .main_header .search form input, .main_header .search form button {
+    font-size: 14px;
+  }
+  .main_header .header_bottom .dropdown-content {
+    width: 100%;
+  }
 }
 
 .carousel {
@@ -527,11 +551,32 @@ figure {
   height: 10px;
 }
 
+@media only screen and (max-width: 992px) {
+  .carousel .carousel__bg h5 {
+    font-size: 30px;
+    margin: 0;
+  }
+  .carousel .carousel__bg p {
+    font-size: 14px;
+  }
+  .carousel .owl-stage {
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .carousel .owl-stage:hover h5 {
+    font-size: 45px;
+  }
+  .carousel .owl-stage:hover p {
+    font-size: 20px;
+  }
+}
+
 .cart {
   z-index: 20;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0.85;
 }
 
 .cart .side_nav {
@@ -737,9 +782,9 @@ figure {
 }
 
 .sale {
+  position: relative;
   background: rgba(0, 0, 0, 0.836);
   padding: 100px 0;
-  height: 900px;
 }
 
 .sale h2 {
@@ -752,11 +797,14 @@ figure {
   text-decoration: underline;
 }
 
+.sale .col-12 .col-lg-6 {
+  margin: 200px 0;
+}
+
 .sale .big_sale {
   position: relative;
   background-size: cover;
-  height: 80vh;
-  width: auto;
+  height: 600px;
   background-repeat: no-repeat;
   background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
   -webkit-transition: 1s;
@@ -765,13 +813,14 @@ figure {
 
 .sale .big_sale:hover {
   opacity: 0.7;
-  height: 90vh;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .sale .top_product {
   position: relative;
   background-size: cover;
-  height: 80vh;
+  height: 600px;
   background-repeat: no-repeat;
   background-image: url(../img/ArtCarousel/iphone13black.jpg);
   -webkit-transition: 1s;
@@ -780,7 +829,26 @@ figure {
 
 .sale .top_product:hover {
   opacity: 0.7;
-  height: 90vh;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media only screen and (max-width: 992px) {
+  .sale .big_sale {
+    height: 400px;
+  }
+  .sale .top_product {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .sale .big_sale {
+    height: 300px;
+  }
+  .sale .top_product {
+    height: 300px;
+  }
 }
 
 .productList {
@@ -802,14 +870,22 @@ figure {
 .card_bg {
   background: transparent;
   padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .card {
+  width: 324px;
   height: 500px;
   position: relative;
   overflow: hidden;
   -webkit-transition: 1s;
   transition: 1s;
+  border: 1px solid rgba(0, 0, 0, 0.541);
   -webkit-box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.582);
           box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.582);
 }
@@ -837,6 +913,11 @@ figure {
 .card .card_type span {
   color: black;
   font-size: 16px;
+}
+
+.card .card_img {
+  width: 324px;
+  height: 200px;
 }
 
 .card .card_img img {
@@ -869,6 +950,36 @@ figure {
 .card .card-body {
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+@media only screen and (max-width: 992px) {
+  .productList h2 {
+    font-size: 26px;
+  }
+  .productList h3 {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .productList .card_name {
+    font-size: 16px;
+  }
+  .productList .card_text {
+    font-size: 12px;
+  }
+  .productList .card_price {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .productList h2 {
+    font-size: 20px;
+  }
+  .productList h3 {
+    font-size: 16px;
+    line-height: 1.1;
+    text-decoration: none;
+  }
 }
 
 /*  07. footer area css here */

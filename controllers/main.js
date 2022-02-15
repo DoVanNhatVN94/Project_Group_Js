@@ -65,7 +65,7 @@ let listSanPham = (mang) => {
   let content = "";
   mang.map((sp) => {
     content += `
-    <div class="col-6 col-lg-4">
+    <div class="col-xs-12 col-md-6 col-lg-4">
     <div class="card_bg">
         <div class="card">
         <div class="card_type"><span>${sp.type}</span></div>
