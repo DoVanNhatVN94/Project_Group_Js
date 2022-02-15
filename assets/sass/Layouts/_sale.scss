@@ -1,8 +1,9 @@
-.sale{
+.sale {
+    position: relative;
     background: rgba(0, 0, 0, 0.836);
     padding: 100px 0;
-    height: 900px;
-    h2{
+
+    h2 {
         position: absolute;
         top: 80%;
         left: 20%;
@@ -11,33 +12,53 @@
         font-weight: 600;
         text-decoration: underline;
     }
-    .big_sale{
-        position: relative;
-        background-size:cover;
-        height: 80vh;
-        width: auto;
-        // background-position: center;
-        background-repeat: no-repeat;
-        
-        background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
-        transition: 1s;
-        &:hover{
-           opacity: 0.7;
-           height: 90vh
-        }
+    .col-12 .col-lg-6 {
+        margin: 200px 0;
     }
-    .top_product{
+    .big_sale {
         position: relative;
         background-size: cover;
-        height: 80vh;
+        height: 600px;
         // background-position: center;
         background-repeat: no-repeat;
-        
+        background-image: url(../img/ArtCarousel/xingye-jiang-tXlWnzBX2ys-unsplash.jpg);
+        transition: 1s;
+        &:hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+    }
+    .top_product {
+        position: relative;
+        background-size: cover;
+        height: 600px;
+        // background-position: center;
+        background-repeat: no-repeat;
         background-image: url(../img/ArtCarousel/iphone13black.jpg);
         transition: 1s;
-        &:hover{
-           opacity: 0.7;
-           height: 90vh
+        &:hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+    }
+}
+@media only screen and (max-width: 992px) {
+    .sale {
+        .big_sale {
+            height: 400px;
+        }
+        .top_product {
+            height: 400px;
+        }
+    }
+}
+@media only screen and (max-width: 720px) {
+    .sale {
+        .big_sale {
+            height: 300px;
+        }
+        .top_product {
+            height: 300px;
         }
     }
 }
