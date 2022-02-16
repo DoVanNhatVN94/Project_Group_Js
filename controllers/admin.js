@@ -17,7 +17,7 @@ let showTable = (arr) => {
             <td>${count}</td>
             <td>${name}</td>
             <td>
-                <img src="${img}" alt="">
+                <img src=".${img}" alt="">
             </td>
             <td>${price}</td>
             <td>${screen}</td>
