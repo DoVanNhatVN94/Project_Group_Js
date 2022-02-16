@@ -51,7 +51,7 @@ let layDanhSach = () => {
   pdSER
     .layDS()
     .then((result) => {
-      console.log("mang sau khi lay ds",result.data);
+      console.log("mang sau khi lay ds", result.data);
       ProductList = [...result.data];
       listSanPham(ProductList);
     })
@@ -65,7 +65,7 @@ let listSanPham = (mang) => {
   let content = "";
   mang.map((sp) => {
     content += `
-    <div class="col-xs-12 col-md-6 col-lg-4">
+    <div class="col-xs-12 col-lg-6 col-xl-4">
     <div class="card_bg">
         <div class="card">
         <div class="card_type"><span>${sp.type}</span></div>
@@ -107,7 +107,7 @@ let onchangeType = () => {
       });
       if (array2.length == 0) {
         array2 = [...array];
-        alert(`"không có ${x}"`);
+        if (x != "NWN") alert(`"không có ${x}"`);
       }
 
       listSanPham(array2);
@@ -212,12 +212,9 @@ function qtyChange(id, boolean) {
       vt = index;
     }
   });
-  if(boolean)
-  cart[vt].quantity++;
-  else
-  cart[vt].quantity--;
-  if(cart[vt].quantity==0)
-removeItem(id);
+  if (boolean) cart[vt].quantity++;
+  else cart[vt].quantity--;
+  if (cart[vt].quantity == 0) removeItem(id);
   setLocalStorage(cart);
   getLocalStorage();
 }
@@ -232,22 +229,21 @@ function removeItem(id) {
   setLocalStorage(cart);
   getLocalStorage();
 }
-function clearCart(){
-  cart=[];
+function clearCart() {
+  cart = [];
   console.log(cart);
   setLocalStorage(cart);
   getLocalStorage();
 }
-function buy(){
+function buy() {
   clearCart();
- alert("Cảm ơn quý khách đã chọn và mua sản phẩm này");
+  alert("Cảm ơn quý khách đã chọn và mua sản phẩm này");
 }
 
-function showTotal(){
-  let total=0;
+function showTotal() {
+  let total = 0;
   cart.map((item) => {
-    total += Number(item.product.price)*item.quantity;
-    
+    total += Number(item.product.price) * item.quantity;
   });
   console.log(total);
   document.getElementById("total").innerHTML = `${total}`;

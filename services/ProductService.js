@@ -6,7 +6,7 @@ class ProductService {
         return axios({
             // trả về đối tượng của AXIOS
             method: 'get',
-            url: 'https://61ebb6137ec58900177cdd3d.mockapi.io/Product',
+            url: 'https://62060a0b161670001741beb6.mockapi.io/sp',
             // responseType: 'stream'
         });
     }
@@ -14,28 +14,28 @@ class ProductService {
         //Trả về đối tượng axios
         return axios({
             method: 'post',
-            url: 'https://61ebb6137ec58900177cdd3d.mockapi.io/Product',
+            url: 'https://62060a0b161670001741beb6.mockapi.io/sp',
             data: sp
         });
     }
     xoaSP = (id) => {
         return axios({
             method: 'delete',
-            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
+            url: `https://62060a0b161670001741beb6.mockapi.io/sp/${id}`,
 
         });
     }
     layID = (id) => {
         return axios({
             method: 'get',
-            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
+            url: `https://62060a0b161670001741beb6.mockapi.io/sp/${id}`,
 
         });
     }
     capNhap=(id,sp)=>{
         return axios({
             method: 'put',
-            url: `https://61ebb6137ec58900177cdd3d.mockapi.io/Product/${id}`,
+            url: `https://62060a0b161670001741beb6.mockapi.io/sp/${id}`,
             data: sp
         });
     }

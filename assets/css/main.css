@@ -883,6 +883,7 @@ figure {
 .card {
   width: 324px;
   height: 500px;
+  padding-bottom: 20px;
   position: relative;
   overflow: hidden;
   -webkit-transition: 1s;
@@ -970,6 +971,12 @@ figure {
   }
   .productList .card_price {
     font-size: 16px;
+  }
+  .card {
+    height: 450px;
+  }
+  .card p {
+    margin: 0;
   }
 }
 
