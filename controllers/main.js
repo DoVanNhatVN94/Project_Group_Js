@@ -41,7 +41,7 @@
 //   },
 // ];
 
-let pdSER = new ProductService();
+let pdSER = new UserService();
 let ProductList = [];
 let cart = [];
 getLocalStorage();
@@ -49,7 +49,7 @@ getLocalStorage();
 
 let layDanhSach = () => {
   pdSER
-    .layDS()
+    .getProduct()
     .then((result) => {
       console.log("mang sau khi lay ds", result.data);
       ProductList = [...result.data];
@@ -78,7 +78,7 @@ let listSanPham = (mang) => {
                                     <p class="card_text">BackCamera: "${sp.backCamera}"</p>
                                     <p class="card_text">FrontCamera: "${sp.frontCamera}"    </p>
                                     <p class="card_text" id="card_text">Mô tả : "${sp.desc}" .</p>
-                <span>Gia: </span><p class="card_price">${sp.price} VND</p>
+                <span>Gia: </span><p class="card_price">$ ${sp.price}</p>
                 <button class="btn btn-primary" onclick="addToCart('${sp.id}')">ADD</button>
             </div>
         </div>
@@ -96,7 +96,7 @@ let onchangeType = () => {
   let array = [];
   let array2 = [];
   pdSER
-    .layDS()
+    .getProduct()
     .then((result) => {
       console.log(result.data);
       array = [...result.data];
