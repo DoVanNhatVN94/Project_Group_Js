@@ -45,13 +45,13 @@ let pdSER = new ProductService();
 let ProductList = [];
 let cart = [];
 getLocalStorage();
-
+// layDanhSach();
 
 let layDanhSach = () => {
   pdSER
     .layDS()
     .then((result) => {
-      console.log(result.data);
+      console.log("mang sau khi lay ds",result.data);
       ProductList = [...result.data];
       listSanPham(ProductList);
     })
@@ -177,7 +177,7 @@ function listCart(mang) {
   let content = "";
   mang.map((sp) => {
     content += `
-    <div class="cart-item">
+    <div class="cart-item mb-3">
       <div class="cart-img">
         <img src="${sp.product.img}" alt="">
        </div>

@@ -576,7 +576,6 @@ figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  opacity: 0.85;
 }
 
 .cart .side_nav {
