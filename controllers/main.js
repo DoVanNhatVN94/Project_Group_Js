@@ -51,7 +51,6 @@ let layDanhSach = () => {
   pdSER
     .getProduct()
     .then((result) => {
-      console.log("mang sau khi lay ds", result.data);
       ProductList = [...result.data];
       listSanPham(ProductList);
     })
@@ -92,13 +91,11 @@ let listSanPham = (mang) => {
 layDanhSach();
 let onchangeType = () => {
   let x = document.getElementById("selectType").value;
-  console.log(x);
   let array = [];
   let array2 = [];
   pdSER
     .getProduct()
     .then((result) => {
-      console.log(result.data);
       array = [...result.data];
       array.map((sp, index) => {
         if (sp.type == x) {
@@ -132,11 +129,7 @@ let onchangeType = () => {
 };
 let addToCart = (id) => {
   let vitri = timVT(id);
-  console.log("id: ", id);
-  console.log("vt: ", vitri);
-
   let productCart = { ...ProductList[vitri] };
-  console.log("product: ", productCart);
 
   if (
     cart.some((item) => {
@@ -150,29 +143,44 @@ let addToCart = (id) => {
     let cartItem = new CartItem(productCart);
     cart.push(cartItem);
   }
-  console.log(cart);
 
   setLocalStorage(cart);
-  showNumberCart(cart.length);
+  showNumberCart(cart);
   getLocalStorage();
 };
 
 // * Tìm vị trí của product *
 let timVT = (id) => {
-  console.log(id);
   let vitri = -1;
   ProductList.map((item, index) => {
-    console.log(item.id);
     if (item.id == id) vitri = index;
   });
   return vitri;
 };
 
-// Hiện Number trên icon shop cart
-function showNumberCart(number) {
-  document.getElementById("count").innerHTML = number;
+// Đếm số lượng quanlity
+function countQuanlity (mang){
+let count=0;
+mang.map((item) => {
+  count += item.quantity;
+});
+return count;
 }
-
+// Hiện Number trên icon shop cart
+function showNumberCart(mang) {
+  let number = countQuanlity(mang);
+  
+  if(mang.length==0)
+  {
+    document.getElementById("count").style.display ="none";
+  }
+  else{
+    document.getElementById("count").style.display ="block";
+    document.getElementById("count").innerHTML = number;
+  }
+  
+}
+// Hiển Thị Cart
 function listCart(mang) {
   let content = "";
   mang.map((sp) => {
@@ -199,12 +207,13 @@ function listCart(mang) {
   document.getElementsByClassName("cart-items")[0].innerHTML = content;
 }
 
+
 function sideNav(e) {
   let t = document.getElementsByClassName("side_nav")[0],
     n = document.getElementsByClassName("cover")[0];
   (t.style.right = e ? "0" : "-100%"), (n.style.display = e ? "block" : "none");
 }
-
+// Thêm Và Bớt số Lượng Item trong Cart
 function qtyChange(id, boolean) {
   let vt = 0;
   cart.map((item, index) => {
@@ -219,9 +228,8 @@ function qtyChange(id, boolean) {
   getLocalStorage();
 }
 
+// Xóa Item Trong Cart
 function removeItem(id) {
-  // console.log(cart);
-
   cart.map((item, index) => {
     console.log(item.product.id, id);
     if (item.product.id == id) cart.splice(index, 1);
@@ -229,23 +237,23 @@ function removeItem(id) {
   setLocalStorage(cart);
   getLocalStorage();
 }
+// Chuyển Cart Về Rỗng
 function clearCart() {
   cart = [];
-  console.log(cart);
   setLocalStorage(cart);
   getLocalStorage();
 }
+// Lệnh Mua
 function buy() {
   clearCart();
   alert("Cảm ơn quý khách đã chọn và mua sản phẩm này");
 }
-
+// Tinh Tổng Hóa ĐƠn
 function showTotal() {
   let total = 0;
   cart.map((item) => {
     total += Number(item.product.price) * item.quantity;
   });
-  console.log(total);
   document.getElementById("total").innerHTML = `${total}`;
 }
 
@@ -259,7 +267,7 @@ function getLocalStorage() {
   if (localStorage.getItem("DSSP") != null) {
     cart = JSON.parse(localStorage.getItem("DSSP"));
     listCart(cart);
-    showNumberCart(cart.length);
-    showTotal();
+    showNumberCart(cart);
+    showTotal(cart);
   }
 }

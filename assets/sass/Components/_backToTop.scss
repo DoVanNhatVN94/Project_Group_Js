@@ -1,0 +1,41 @@
+/* BackToTop  */
+
+.backToTop {
+    position: fixed;
+    right: 15px;
+    bottom: 90px;
+    z-index: 99;
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 47px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: wheat;
+    background-color: rgba(24, 21, 21, 0.979);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 0;
+    padding: 0;
+    transition: 0.3s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    /* display: none; */
+  }
+  
+  .cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+    /* display: block; */
+  }
+  .backToTop:hover {
+    color: black;
+    background-color: wheat;
+    transform: translate3d(0, -5px, 0);
+    -webkit-transform: translate3d(0, -5px, 0);
+    transition: 0.3s ease-out;
+  }
+  /* BackToTop  */

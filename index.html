@@ -57,13 +57,13 @@
                         <img src="./assets/img/logo/logo.png" alt="">
                     </a>
                     <div class="search w-50">
-                        
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search Product..."
-                                    aria-label="Search">
-                                <button class="btn btn-outline-primary" type="submit">Search</button>
-                            </form>
-                        
+
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search Product..."
+                                aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                        </form>
+
                     </div>
                     <div class="header_icon">
                         <ul>
@@ -79,6 +79,7 @@
                             <li class="relative">
                                 <button class="fa fa-shopping-cart" onclick="sideNav(1)"></button>
                                 <p class="count" id="count">2</p>
+                                <!-- <p class="icon_count"></p> -->
                             </li>
                         </ul>
                     </div>
@@ -249,7 +250,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <a class="item__pc__bg pc__bg__04">
+                    <div class="item__pc__bg pc__bg__04">
                         <div class="item__pc__content">
                             <div class="container">
                                 <div class="carousel__bg text-left">
@@ -263,7 +264,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="item">
                     <div class="item__pc__bg pc__bg__07">
@@ -338,8 +339,8 @@
         <div class="product_content">
             <div class="container">
                 <div class="row" id="content">
-
-                    <div class="col-xs-12 col-md-6 col-lg-4">
+                    <!-- test card -->
+                    <!-- <div class="col-xs-12 col-md-6 col-lg-4">
                         <div class="card_bg">
                             <div class="card">
                                 <div class="card_img">
@@ -393,7 +394,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -511,7 +512,8 @@
         </div>
     </footer>
 
-
+    <!-- BACKTOTOP  -->
+    <a href="#" class="backToTop cd-top text-replace js-cd-top">&#10548</a>
 
 
     <!-- BS 5 JS -->
@@ -585,9 +587,23 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
     </script>
+
+    <!-- Back to Top -->
+    <script src="./assets/js/util.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <!-- Back to Top -->
+
+    <!-- Service -->
     <script src="./services/UserService.js"></script>
+    <!-- Service -->
+
+    <!-- CartItem -->
     <script src="./models/CartItem.js"></script>
+    <!-- CartItem -->
+
+    <!-- Main JS -->
     <script src="./controllers/main.js"></script>
+    <!-- Main JS -->
 
 </body>
 
