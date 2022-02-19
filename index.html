@@ -19,7 +19,7 @@
     <!-- OWL CAROUSEL -->
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
     <!-- ANIMATE -->
-    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
 
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <header id="main_header" class="main_header">
+    <header id="main_header" class="main_header  animate__fadeInDown">
         <div class="header_top">
             <div class="container">
                 <div class="dislay_flex_sb">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="header_bottom" id="header_bottom">
+        <div class="header_bottom animate__animated " id="header_bottom">
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -161,7 +161,7 @@
     <div onclick="sideNav(0)" class="cover"></div>
 
 
-    <section class="carousel" id="home">
+    <section class="carousel animate__animated animate__fadeIn" id="home">
         <div id="slider1" class="pc_carousel_content">
             <div class="owl-carousel owl-theme ">
                 <div class="item">
@@ -290,15 +290,15 @@
     <section class="sale">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-6 p-5">
-                    <div class="big_sale">
+                <div class="col-12 col-lg-6 p-5 ">
+                    <div class="big_sale animate__animated ">
                         <a href="">
                             <h2>Big Sale Products</h2>
                         </a>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 p-5">
-                    <div class="top_product">
+                <div class="col-12 col-lg-6 p-5  ">
+                    <div class="top_product animate__animated">
                         <a href="">
                             <h2>Top Products</h2>
                         </a>
@@ -525,29 +525,10 @@
     <!--owl carousel min js-->
     <script src="./assets/sass/vendor/owl.carousel.min.js"></script>
 
-    <!--/MENU-JS-->
-    <script>
-        // $(window).on("scroll", function () {
-        //     var scroll = $(window).scrollTop();
-
-        //     if (scroll >= 200) {
-        //         $("#header_bottom").addClass("fixed");
-        //     } else {
-        //         $("#main_header").removeClass("fixed");
-        //     }
-        // });
-        $(window).on('scroll', function () {
-            var scroll = $(window).scrollTop();
-            if (scroll < 200) {
-                $(".header_bottom").removeClass("fixed");
-            } else {
-                $(".header_bottom").addClass("fixed");
-            }
-        });
-
-    </script>
 
     <!--//MENU-JS-->
+
+    <!-- carousel JS  -->
     <script>
         $(document).ready(function () {
             $('#slider1 .owl-carousel').owlCarousel({
@@ -585,24 +566,22 @@
             })
         })
     </script>
+
+    <!-- AXIOS js  -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
     </script>
+
 
     <!-- Back to Top -->
     <script src="./assets/js/util.js"></script>
     <script src="./assets/js/main.js"></script>
     <!-- Back to Top -->
 
-    <!-- Service -->
-    <script src="./services/UserService.js"></script>
-    <!-- Service -->
-
-    <!-- CartItem -->
-    <script src="./models/CartItem.js"></script>
-    <!-- CartItem -->
-
+    <!-- animate js  -->
+    <script src="./assets/js/animate.js"></script>
+    
     <!-- Main JS -->
-    <script src="./controllers/main.js"></script>
+    <script type="module" src="./controllers/main.js"></script>
     <!-- Main JS -->
 
 </body>

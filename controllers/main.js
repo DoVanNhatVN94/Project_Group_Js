@@ -1,3 +1,6 @@
+import UserService from "../services/UserService.js";
+import CartItem from "../models/CartItem.js";
+
 // let data = [
 //   {
 //     name: "iphoneX",
@@ -84,7 +87,6 @@ let listSanPham = (mang) => {
     </div>
 </div>
 `;
-    count++;
   });
   document.getElementById("content").innerHTML = content;
 };
@@ -127,6 +129,7 @@ let onchangeType = () => {
 
   // listSanPham(array2);
 };
+window.onchangeType = onchangeType;
 let addToCart = (id) => {
   let vitri = timVT(id);
   let productCart = { ...ProductList[vitri] };
@@ -147,7 +150,8 @@ let addToCart = (id) => {
   setLocalStorage(cart);
   showNumberCart(cart);
   getLocalStorage();
-};
+} 
+window.addToCart = addToCart;
 
 // * Tìm vị trí của product *
 let timVT = (id) => {
@@ -159,26 +163,23 @@ let timVT = (id) => {
 };
 
 // Đếm số lượng quanlity
-function countQuanlity (mang){
-let count=0;
-mang.map((item) => {
-  count += item.quantity;
-});
-return count;
+function countQuanlity(mang) {
+  let count = 0;
+  mang.map((item) => {
+    count += item.quantity;
+  });
+  return count;
 }
 // Hiện Number trên icon shop cart
 function showNumberCart(mang) {
   let number = countQuanlity(mang);
-  
-  if(mang.length==0)
-  {
-    document.getElementById("count").style.display ="none";
-  }
-  else{
-    document.getElementById("count").style.display ="block";
+
+  if (mang.length == 0) {
+    document.getElementById("count").style.display = "none";
+  } else {
+    document.getElementById("count").style.display = "block";
     document.getElementById("count").innerHTML = number;
   }
-  
 }
 // Hiển Thị Cart
 function listCart(mang) {
@@ -207,12 +208,12 @@ function listCart(mang) {
   document.getElementsByClassName("cart-items")[0].innerHTML = content;
 }
 
-
 function sideNav(e) {
   let t = document.getElementsByClassName("side_nav")[0],
     n = document.getElementsByClassName("cover")[0];
   (t.style.right = e ? "0" : "-100%"), (n.style.display = e ? "block" : "none");
 }
+window.sideNav = sideNav;
 // Thêm Và Bớt số Lượng Item trong Cart
 function qtyChange(id, boolean) {
   let vt = 0;
@@ -227,6 +228,7 @@ function qtyChange(id, boolean) {
   setLocalStorage(cart);
   getLocalStorage();
 }
+window.qtyChange = qtyChange;
 
 // Xóa Item Trong Cart
 function removeItem(id) {
@@ -237,17 +239,20 @@ function removeItem(id) {
   setLocalStorage(cart);
   getLocalStorage();
 }
+window.removeItem=removeItem;
 // Chuyển Cart Về Rỗng
 function clearCart() {
   cart = [];
   setLocalStorage(cart);
   getLocalStorage();
 }
+window.clearCart=clearCart;
 // Lệnh Mua
 function buy() {
   clearCart();
   alert("Cảm ơn quý khách đã chọn và mua sản phẩm này");
 }
+window.buy =buy;
 // Tinh Tổng Hóa ĐƠn
 function showTotal() {
   let total = 0;

@@ -1,4 +1,4 @@
-class UserService {
+export default class UserService {
   constructor() {}
   getProduct() {
     return axios({

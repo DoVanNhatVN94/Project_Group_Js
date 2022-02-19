@@ -32,7 +32,6 @@
         z-index: 0.9;
       }
     }
-    
 
     button {
       i {
@@ -64,7 +63,8 @@
   .header_bottom {
     background-color: #fff;
     border-top: 2px solid rgb(241, 236, 227);
-    .navbar-toggler{
+    animation-duration: 1s;
+    .navbar-toggler {
       border: none;
       color: transparent;
     }
@@ -101,37 +101,38 @@
 
 @media only screen and (max-width: 992px) {
   .main_header {
-    .header_icon{
+    .header_icon {
       border: none;
       padding: 0;
-      li{
+      li {
         .count {
           top: -10px;
           font-size: 9px;
           padding: 6px;
         }
-          
-          i,a,button{
-            font-size: 14px;
-          }
-        
-      }
-    }
-    .search {
-      form{
-        .form-control{
-          padding: 0.5rem 0.75rem;
-        }
-        input,button{
+
+        i,
+        a,
+        button {
           font-size: 14px;
         }
       }
     }
-    .header_bottom{
-      .dropdown-content{
+    .search {
+      form {
+        .form-control {
+          padding: 0.5rem 0.75rem;
+        }
+        input,
+        button {
+          font-size: 14px;
+        }
+      }
+    }
+    .header_bottom {
+      .dropdown-content {
         width: 100%;
       }
     }
   }
-  
 }

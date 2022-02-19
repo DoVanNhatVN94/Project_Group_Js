@@ -479,6 +479,8 @@ figure {
 .main_header .header_bottom {
   background-color: #fff;
   border-top: 2px solid #f1ece3;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .main_header .header_bottom .navbar-toggler {
@@ -530,13 +532,16 @@ figure {
     font-size: 9px;
     padding: 6px;
   }
-  .main_header .header_icon li i, .main_header .header_icon li a, .main_header .header_icon li button {
+  .main_header .header_icon li i,
+  .main_header .header_icon li a,
+  .main_header .header_icon li button {
     font-size: 14px;
   }
   .main_header .search form .form-control {
     padding: 0.5rem 0.75rem;
   }
-  .main_header .search form input, .main_header .search form button {
+  .main_header .search form input,
+  .main_header .search form button {
     font-size: 14px;
   }
   .main_header .header_bottom .dropdown-content {
