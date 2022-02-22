@@ -1,4 +1,18 @@
 .main_header {
+  .count {
+    background-color: wheat;
+    line-height: 0.6;
+    font-size: 10px;
+    top: -15px;
+    right: -0;
+    position: absolute;
+    border-radius: 50%;
+    color: black;
+    padding: 7px;
+    opacity: 0.7;
+    font-weight: 700;
+    z-index: 0.9;
+  }
   span {
     color: rgba(0, 0, 0, 0.685);
   }
@@ -17,20 +31,6 @@
     border-right: 2px solid rgb(241, 236, 227);
     li {
       padding-right: 15px;
-      .count {
-        background-color: wheat;
-        line-height: 0.6;
-        font-size: 10px;
-        top: -15px;
-        right: -0;
-        position: absolute;
-        border-radius: 50%;
-        color: black;
-        padding: 7px;
-        opacity: 0.7;
-        font-weight: 700;
-        z-index: 0.9;
-      }
     }
 
     button {
@@ -64,6 +64,13 @@
     background-color: #fff;
     border-top: 2px solid rgb(241, 236, 227);
     animation-duration: 1s;
+    .icon-count2 {
+      .count {
+        top: -7px;
+        right: -15px;
+      }
+    }
+
     .navbar-toggler {
       border: none;
       color: transparent;
@@ -101,16 +108,15 @@
 
 @media only screen and (max-width: 992px) {
   .main_header {
+    .count {
+      top: -5px;
+      font-size: 9px;
+      padding: 6px;
+    }
     .header_icon {
       border: none;
       padding: 0;
       li {
-        .count {
-          top: -10px;
-          font-size: 9px;
-          padding: 6px;
-        }
-
         i,
         a,
         button {

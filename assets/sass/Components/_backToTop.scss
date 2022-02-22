@@ -29,6 +29,7 @@
   .cd-top--is-visible {
     visibility: visible;
     opacity: 1;
+    z-index: 10;
     /* display: block; */
   }
   .backToTop:hover {

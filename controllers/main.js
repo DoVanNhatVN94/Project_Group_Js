@@ -176,9 +176,12 @@ function showNumberCart(mang) {
 
   if (mang.length == 0) {
     document.getElementById("count").style.display = "none";
+    document.getElementById("count2").style.display = "none";
   } else {
     document.getElementById("count").style.display = "block";
+    document.getElementById("count2").style.display = "block";
     document.getElementById("count").innerHTML = number;
+    document.getElementById("count2").innerHTML = number;
   }
 }
 // Hiển Thị Cart
