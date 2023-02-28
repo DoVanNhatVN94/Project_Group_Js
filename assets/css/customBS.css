@@ -1,0 +1,3 @@
+.form-control:focus, .btn-outline-primary:active:focus{
+    box-shadow: 0 0 0 0.2rem rgb(222 158 42 / 25%);;
+}
