@@ -1,5 +1,5 @@
-export default class Product{
-    constructor(namePhone,price,screen,backCam,frontCam,img,desc,type){
+export default class Product {
+    constructor(namePhone, price, screen, backCam, frontCam, img, desc, type) {
         this.name = namePhone;
         this.price = price;
         this.screen = screen;
